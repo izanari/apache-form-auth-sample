@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  httpd:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: "./htdocs"
+        target: "/usr/local/apache2/htdocs"
+    ports:
+      - 80:80
